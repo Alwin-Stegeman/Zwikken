@@ -1,0 +1,174 @@
+﻿<Window x:Class="Zwikken.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Name="ZwikWindow"
+        Title="\\ ZWIKKEN //" Height="700" Width="900" 
+        WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource ColorBlue}" />
+            <Setter Property="FontSize" Value="24" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </Window.Resources>
+    <Window.Background>
+        <StaticResource ResourceKey="ColorGold"/>
+    </Window.Background>
+
+    <Border BorderBrush="{StaticResource ColorRed}" BorderThickness="3">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="3" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="3" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" Padding="10">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="{Binding Path=Pot.TextFiches}" 
+                       Foreground="{Binding Path=Pot.TextColor}"/>
+                    <Border BorderBrush="{Binding Path=Pot.Border}" BorderThickness="8" CornerRadius="8">
+                        <Image DockPanel.Dock="Bottom" Height="150" Source="{Binding Path=Pot.Kaart.Source}" />
+                    </Border>
+                </DockPanel>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="1" Padding="10">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="{Binding Path=Troef[0].TextName}" 
+                       Foreground="{Binding Path=Troef[0].TextColor}"/>
+                    <Border BorderBrush="{Binding Path=Troef[0].Border}" BorderThickness="8" CornerRadius="8">
+                        <Image Name="ImgT0" DockPanel.Dock="Bottom" Height="150" Source="{Binding Path=Troef[0].Kaart.Source}" 
+                         MouseEnter="Troef_MouseEnter" MouseLeave="Troef_MouseLeave" MouseLeftButtonDown="TroefLeftButtonDown"/>
+                    </Border>
+                </DockPanel>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="2" Padding="10">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="{Binding Path=Troef[1].TextName}" 
+                       Foreground="{Binding Path=Troef[1].TextColor}"/>
+                    <Border BorderBrush="{Binding Path=Troef[1].Border}" BorderThickness="8" CornerRadius="8">
+                        <Image Name="ImgT1" DockPanel.Dock="Bottom" Height="150" Source="{Binding Path=Troef[1].Kaart.Source}" 
+                         MouseEnter="Troef_MouseEnter" MouseLeave="Troef_MouseLeave" MouseLeftButtonDown="TroefLeftButtonDown"/>
+                    </Border>
+                </DockPanel>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="3" Padding="10">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="{Binding Path=Troef[2].TextName}" 
+                       Foreground="{Binding Path=Troef[2].TextColor}"/>
+                    <Border BorderBrush="{Binding Path=Troef[2].Border}" BorderThickness="8" CornerRadius="8">
+                        <Image Name="ImgT2" DockPanel.Dock="Bottom" Height="150" Source="{Binding Path=Troef[2].Kaart.Source}" 
+                         MouseEnter="Troef_MouseEnter" MouseLeave="Troef_MouseLeave" MouseLeftButtonDown="TroefLeftButtonDown"/>
+                    </Border>
+                </DockPanel>
+            </Border>
+            <TextBlock Grid.Row="1" Grid.ColumnSpan="4" Background="{StaticResource ColorRed}"/>
+            <Border Grid.Row="2" Grid.Column="0" Padding="10">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center"  Text="{Binding Path=PlayerCard[0].TextName}" 
+                       Foreground="{Binding Path=PlayerCard[0].TextColor}"/>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="{Binding Path=PlayerCard[0].TextFiches}" 
+                       Foreground="{Binding Path=PlayerCard[0].TextColor}"/>
+                    <Border BorderBrush="{Binding Path=PlayerCard[0].Border}" BorderThickness="8" CornerRadius="8">
+                        <Image Name="ImgPC0" DockPanel.Dock="Bottom" Height="150" Source="{Binding Path=PlayerCard[0].Kaart.Source}" />
+                    </Border>
+                </DockPanel>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="1" Padding="10">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="{Binding Path=PlayerCard[1].TextName}" 
+                       Foreground="{Binding Path=PlayerCard[1].TextColor}"/>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="{Binding Path=PlayerCard[1].TextFiches}" 
+                       Foreground="{Binding Path=PlayerCard[1].TextColor}"/>
+                    <Border BorderBrush="{Binding Path=PlayerCard[1].Border}" BorderThickness="8" CornerRadius="8">
+                        <Image Name="ImgPC1" DockPanel.Dock="Bottom" Height="150" Source="{Binding Path=PlayerCard[1].Kaart.Source}" />
+                    </Border>
+                </DockPanel>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="2" Padding="10">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="{Binding Path=PlayerCard[2].TextName}" 
+                       Foreground="{Binding Path=PlayerCard[2].TextColor}"/>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="{Binding Path=PlayerCard[2].TextFiches}" 
+                       Foreground="{Binding Path=PlayerCard[2].TextColor}"/>
+                    <Border BorderBrush="{Binding Path=PlayerCard[2].Border}" BorderThickness="8" CornerRadius="8">
+                        <Image Name="ImgPC2" DockPanel.Dock="Bottom" Height="150" Source="{Binding Path=PlayerCard[2].Kaart.Source}" />
+                    </Border>
+                </DockPanel>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="3" Padding="10">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="{Binding Path=PlayerCard[3].TextName}" 
+                       Foreground="{Binding Path=PlayerCard[3].TextColor}"/>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="{Binding Path=PlayerCard[3].TextFiches}" 
+                       Foreground="{Binding Path=PlayerCard[3].TextColor}"/>
+                    <Border BorderBrush="{Binding Path=PlayerCard[3].Border}" BorderThickness="8" CornerRadius="8">
+                        <Image Name="ImgPC3" DockPanel.Dock="Bottom" Height="150" Source="{Binding Path=PlayerCard[3].Kaart.Source}" />
+                    </Border>
+                </DockPanel>
+            </Border>
+            <TextBlock Grid.Row="3" Grid.ColumnSpan="4" Background="{StaticResource ColorRed}"/>
+            <Border Grid.Row="4" Grid.Column="0" Padding="10">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="{Binding Path=UserHand[0].TextName}" 
+                       Foreground="{Binding Path=UserHand[0].TextColor}"/>
+                    <Border BorderBrush="{Binding Path=UserHand[0].Border}" BorderThickness="8" CornerRadius="8">
+                        <Image Name="ImgH0" DockPanel.Dock="Bottom" Height="150" Source="{Binding Path=UserHand[0].Kaart.Source}" 
+                       MouseEnter="UserCard_MouseEnter" MouseLeave="UserCard_MouseLeave" MouseLeftButtonDown="UserCard_MouseLeftButtonDown"/>
+                    </Border>
+                </DockPanel>
+            </Border>
+            <Border Grid.Row="4" Grid.Column="1" Padding="10">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="{Binding Path=UserHand[1].TextName}" 
+                       Foreground="{Binding Path=UserHand[1].TextColor}"/>
+                    <Border BorderBrush="{Binding Path=UserHand[1].Border}" BorderThickness="8" CornerRadius="8">
+                        <Image Name="ImgH1" DockPanel.Dock="Bottom" Height="150" Source="{Binding Path=UserHand[1].Kaart.Source}" 
+                       MouseEnter="UserCard_MouseEnter" MouseLeave="UserCard_MouseLeave" MouseLeftButtonDown="UserCard_MouseLeftButtonDown"/>
+                    </Border>
+                </DockPanel>
+            </Border>
+            <Border Grid.Row="4" Grid.Column="2" Padding="10">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="{Binding Path=UserHand[2].TextName}" 
+                       Foreground="{Binding Path=UserHand[2].TextColor}"/>
+                    <Border BorderBrush="{Binding Path=UserHand[2].Border}" BorderThickness="8" CornerRadius="8">
+                        <Image Name="ImgH2" DockPanel.Dock="Bottom" Height="150" Source="{Binding Path=UserHand[2].Kaart.Source}" 
+                       MouseEnter="UserCard_MouseEnter" MouseLeave="UserCard_MouseLeave" MouseLeftButtonDown="UserCard_MouseLeftButtonDown"/>
+                    </Border>
+                </DockPanel>
+            </Border>
+            <Border Grid.Row="4" Grid.Column="3" Padding="10">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text=" " />
+                    <Border DockPanel.Dock="Top" BorderBrush="Black" BorderThickness="2">
+                        <Button HorizontalAlignment="Stretch" Height="25" Click="Button_Top_Click" 
+                                Content="{Binding Path=ButtonTopTxt}"/>
+                    </Border>
+                    <TextBlock DockPanel.Dock="Top" FontSize="4" Text=" "/>
+                    <Border DockPanel.Dock="Top" BorderBrush="Black" BorderThickness="2">
+                        <Button HorizontalAlignment="Stretch" Height="25" Click="Button_Bottom_Click"
+                                Content="{Binding Path=ButtonBottomTxt}"/>
+                    </Border>
+                    <TextBlock DockPanel.Dock="Top" FontSize="10" Text=" "/>
+                    <TextBlock DockPanel.Dock="Bottom" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" 
+                               Text="{Binding Path=MsgTxt}"/>
+                </DockPanel>
+            </Border>
+
+        </Grid>
+    </Border>
+
+</Window>
+
+

@@ -1,0 +1,12 @@
+﻿<Application x:Class="Zwikken.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Zwikken"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <SolidColorBrush x:Key="ColorBlack" Color="#000000"/>
+        <SolidColorBrush x:Key="ColorBlue" Color="#021B75"/>
+        <SolidColorBrush x:Key="ColorGold" Color="#DCB102"/>
+        <SolidColorBrush x:Key="ColorRed" Color="#DB0102"/>
+    </Application.Resources>
+</Application>
