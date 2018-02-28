@@ -5,4 +5,4 @@ A computer player that has run out of chips is taken out of the game.
 
 For game rules (Dutch), see https://nl.wikipedia.org/wiki/Zwikken
 
-The game is programmed in C# and played via a mouse controlled GUI, programmed using the Windows Foundation Presentation (WPF).
+The game is programmed in C# and played via a mouse controlled GUI, programmed using the Windows Presentation Foundation (WPF).
